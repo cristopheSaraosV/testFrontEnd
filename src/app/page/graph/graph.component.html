@@ -5,10 +5,14 @@
   type="info"
 ></app-msg-alert>
 
-<div class="row justify-content-md-9">
-  <div class="col-sm-12 col-md-9">
-      <app-graph-card
-      currency="uf"
+<div class="row justify-content-md-center">
+  <div *ngFor="let currency of listCurrency" class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5  mb-3 ms-2">
+    <app-graph-card
+      [currency]="currency"
       ></app-graph-card>
   </div>
+
+
+
+
 </div>

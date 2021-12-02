@@ -14,7 +14,7 @@ export class GraphComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  listCurrency:string[] = [ 'uf','ivp','dolar','dolar_intercambio','euro','ipc' ]
 
   }
 
