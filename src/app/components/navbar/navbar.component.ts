@@ -1,3 +1,4 @@
+import { menuItem } from './../../interfaces/menuItem.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   constructor() { }
+  menuItem: menuItem[] = [];
 
   ngOnInit(): void {
+    this.menuItem = [
+      { label:'Inicio', route:'',activeRoute:'active' },
+      { label:'Graficas', route:'graph',activeRoute:'active' }
+    ]
   }
 
 }
