@@ -1,3 +1,5 @@
+import { MindicadorCurrent } from './../../interfaces/miIndicadorCurrent.interface';
+import { MindIndicadorService } from './../../services/mind-indicador.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GraphComponent implements OnInit {
 
-  constructor() { }
+  constructor(private mindIndicadorService: MindIndicadorService){}
 
   ngOnInit(): void {
   }
 
-}
+
+
+  }
+

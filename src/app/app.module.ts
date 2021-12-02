@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { GraphCardComponent } from './components/graph-card/graph-card.component';
 import { MsgAlertComponent } from './components/msg-alert/msg-alert.component';
 import { HttpClientModule } from "@angular/common/http";
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,12 @@ import { HttpClientModule } from "@angular/common/http";
     MsgAlertComponent
   ],
   imports: [
+    NgxChartsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SweetAlert2Module.forChild(),
+    BrowserAnimationsModule,
+    SweetAlert2Module.forChild()
 
   ],
   providers: [],
