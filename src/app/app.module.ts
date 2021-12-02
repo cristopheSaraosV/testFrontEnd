@@ -8,6 +8,7 @@ import { HomeComponent } from './page/home/home.component';
 import { GraphComponent } from './page/graph/graph.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GraphCardComponent } from './components/graph-card/graph-card.component';
+import { MsgAlertComponent } from './components/msg-alert/msg-alert.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GraphCardComponent } from './components/graph-card/graph-card.component
     HomeComponent,
     GraphComponent,
     NavbarComponent,
-    GraphCardComponent
+    GraphCardComponent,
+    MsgAlertComponent
   ],
   imports: [
     BrowserModule,
