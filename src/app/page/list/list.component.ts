@@ -5,7 +5,6 @@ import { Serie } from './../../interfaces/miIndicadorCurrent.interface';
 import { MindIndicadorService } from './../../services/mind-indicador.service';
 import { DataLineGraph } from './../../interfaces/dataLineGraph.interface';
 import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-list',
