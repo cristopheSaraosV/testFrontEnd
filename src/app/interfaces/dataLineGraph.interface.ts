@@ -1,6 +1,8 @@
+import { Serie } from './miIndicadorCurrent.interface';
 export interface DataLineGraph {
   name:   string;
-  series: Series[];
+  serie?: Serie[];
+  series?: Series[];
 }
 
 export interface Series {

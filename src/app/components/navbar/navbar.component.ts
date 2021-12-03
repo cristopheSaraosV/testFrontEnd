@@ -14,7 +14,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.menuItem = [
       { label:'Inicio', route:'',activeRoute:'active' },
-      { label:'Graficas', route:'graph',activeRoute:'active' }
+      { label:'Graficas', route:'graph',activeRoute:'active' },
+      { label:'Lista', route:'list',activeRoute:'active' }
     ]
   }
 

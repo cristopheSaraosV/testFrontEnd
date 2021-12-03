@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-navbar></app-navbar>
+
+  </div>
+  <div class="col-sm-12">
+    <app-msg-alert
+    title="Lista"
+    detail="Estas en el lista de la aplicación"
+    type="info"
+  ></app-msg-alert>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-2">
+    <div class="btn-group-vertical">
+      <button *ngFor="let item of listCurrency" class="btn btn-dark mx-2 " type="button" (click)="selectCurrency(item)" >{{item | titlecase}}</button>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-10" *ngIf="series.length !== 0; else notFound">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of series; let i = index">
+            <th scope="col">{{i+1}}</th>
+            <td>{{item.fecha | date}}</td>
+            <td>{{item.valor | currency}}</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+        </div>
+
+  </div>
+  <ng-template #notFound>
+    <div class="col-sm-12 col-md-10">
+      <div class="alert alert-warning" role="alert">
+          Debes seleccionar un currency
+      </div>
+    </div>
+  </ng-template>
+</div>
