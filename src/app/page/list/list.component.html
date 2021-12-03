@@ -12,13 +12,15 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row justify-content-md-center">
   <div class="col-sm-12 col-md-2">
-    <div class="btn-group-vertical">
-      <button *ngFor="let item of listCurrency" class="btn btn-dark mx-2 " type="button" (click)="selectCurrency(item)" >{{item | titlecase}}</button>
+
+    <div class="d-grid gap-2 mb-5">
+      <button *ngFor="let item of listCurrency" class="btn btn-dark mx-3" type="button" (click)="selectCurrency(item)" >{{item | titlecase}}</button>
+
     </div>
   </div>
-  <div class="col-sm-12 col-md-10" *ngIf="series.length !== 0; else notFound">
+  <div class="col-sm-12 col-md-8 p-3" *ngIf="series.length !== 0; else notFound">
     <div class="table-responsive">
       <table class="table table-hover">
         <thead class="table-dark">
@@ -42,7 +44,7 @@
 
   </div>
   <ng-template #notFound>
-    <div class="col-sm-12 col-md-10">
+    <div class="col-sm-12 col-md-8 p-3">
       <div class="alert alert-warning" role="alert">
           Debes seleccionar un currency
       </div>
