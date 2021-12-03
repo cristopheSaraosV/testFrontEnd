@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="row justify-content-md-center mt-0 mt-md-2">
+
+  <div class="col-sm-12 col-md-7 mt-0 mt-md-3">
+    <app-msg-alert
+    title="Lista"
+    detail="Estas en el lista de la aplicación"
+    type="primary"
+  ></app-msg-alert>
+  </div>
+</div>
+
+<div class="row justify-content-md-center">
+  <div class="col-sm-12 col-md-2 mt-3">
+
+    <div class="d-grid gap-2 mb-5">
+      <button *ngFor="let item of listCurrency; let i = index" class="btn btn-secondary mx-3 " type="button" (click)="selectCurrency(item)" >
+        <i [class]="listCurrencyIcon[i]"></i>
+        {{item | titlecase}}</button>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-8 p-3" *ngIf="series.length !== 0; else notFound">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of series; let i = index">
+            <th scope="col">{{i+1}}</th>
+            <td>{{item.fecha | date:'dd/MM/yyyy'}}</td>
+            <td>{{item.valor | currency}}</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+        </div>
+
+  </div>
+  <ng-template #notFound>
+    <div class="col-sm-12 col-md-8 p-3">
+      <div class="alert alert-warning" role="alert">
+          Debes seleccionar un currency
+      </div>
+    </div>
+  </ng-template>
+</div>
