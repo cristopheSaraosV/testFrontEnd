@@ -27,6 +27,7 @@ export class ListComponent implements OnInit {
 
   dataLineGraph:DataLineGraph;
 
+
   selectCurrency(item:string){
     this.mindIndicadorService.showFinancialIndicators(item).subscribe( res => {
       const { nombre, serie } = res;

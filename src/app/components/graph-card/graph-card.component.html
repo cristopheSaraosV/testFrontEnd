@@ -1,6 +1,38 @@
 <div>
   <h3 class="display-6 mb-2">{{ title }}</h3>
   <h6 class="mb-2">{{ subtitle }}</h6>
+  <span *ngIf="priceIncreased;else notIncreased" class="badge bg-success mb-2 mt-1">Subio de precio</span>
+  <ng-template #notIncreased>
+    <span  class="badge bg-danger mb-2 mt-1">Bajo de precio</span>
+  </ng-template>
+  <p>
+
+    <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" [attr.data-bs-target] ="'#'+codigo" aria-expanded="false" aria-controls="collapseExample">
+      Ver ultimos 10
+    </button>
+  </p>
+  <div class="collapse mb-3" [id]="codigo">
+    <div class="card card-body">
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of latestTeenSeries; let i = index">
+            <th scope="col">{{i+1}}</th>
+            <td>{{item.name | date}}</td>
+            <td>{{item.value | currency}}</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <ngx-charts-line-chart
     [results]="data"
@@ -18,4 +50,8 @@
     [maxYAxisTickLength]="299"
   ></ngx-charts-line-chart>
 </div>
+
+
+
+
 

@@ -23,6 +23,8 @@ export class GraphCardComponent implements OnInit {
   currencyText:string="";
   subtitle:string="";
   series:Series[] = [];
+  latestTeenSeries:Series[] = [];
+  priceIncreased:boolean = false;
 
   @Input('currency')currency! : string;
 
@@ -53,6 +55,8 @@ export class GraphCardComponent implements OnInit {
     this.codigo   = codigo;
     this.currencyText= unidad_medida;
 
+
+
     this.series = serie.map( res => {
       return {
         name  :  moment.utc(res.fecha).format('MM/DD/YYYY'),
@@ -66,7 +70,20 @@ export class GraphCardComponent implements OnInit {
 
 
 
+    const latest      = serie[serie.length-1].valor
+    const penultimate = serie[serie.length-2].valor
 
+    this.latestTeenSeries = serie.slice(serie.length-10, serie.length).map( item =>{
+
+      return {
+          name:item.fecha.toString(),
+          value: item.valor
+        }
+      }
+    );
+
+
+    this.priceIncreased = latest >= penultimate ? true: false;
     return  {name:nombre, series: this.series};
 
   }
