@@ -24,6 +24,7 @@ export class GraphCardComponent implements OnInit {
   subtitle:string="";
   series:Series[] = [];
   latestTeenSeries:Series[] = [];
+  latestDate:Date;
   priceIncreased:boolean = false;
 
   @Input('currency')currency! : string;
@@ -73,6 +74,7 @@ export class GraphCardComponent implements OnInit {
     const latest      = serie[serie.length-1].valor
     const penultimate = serie[serie.length-2].valor
 
+    this.latestDate = serie[serie.length-1].fecha;
     this.latestTeenSeries = serie.slice(serie.length-10, serie.length).map( item =>{
 
       return {

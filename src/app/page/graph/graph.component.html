@@ -1,20 +1,19 @@
-<div class="row justify-content-md-center">
-  <div class="col-sm-12">
-    <app-navbar></app-navbar>
-  </div>
-  <div class="col-sm-12">
-    <app-msg-alert
-      title="Graficas"
-      detail="Estas en el grafica de la aplicación"
-      type="primary"
-    ></app-msg-alert>
-  </div>
+<app-navbar></app-navbar>
+  <div class="row justify-content-md-center mt-0 mt-md-2">
 
-  <div
-    *ngFor="let currency of listCurrency"
-    class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 mb-3 ms-2"
-  >
-    <app-graph-card [currency]="currency"></app-graph-card>
+    <div class="col-sm-12 col-md-7 mt-0 mt-md-3">
+      <app-msg-alert
+        title="Graficas"
+        detail="Estas en el grafica de la aplicación"
+        type="primary"
+      ></app-msg-alert>
+    </div>
+
+    <div
+      *ngFor="let currency of listCurrency"
+      class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 mb-3 ms-2"
+    >
+      <app-graph-card [currency]="currency"></app-graph-card>
+    </div>
   </div>
-</div>
 

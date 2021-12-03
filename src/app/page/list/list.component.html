@@ -1,9 +1,7 @@
-<div class="row">
-  <div class="col-sm-12">
-    <app-navbar></app-navbar>
+<app-navbar></app-navbar>
+<div class="row justify-content-md-center mt-0 mt-md-2">
 
-  </div>
-  <div class="col-sm-12">
+  <div class="col-sm-12 col-md-7 mt-0 mt-md-3">
     <app-msg-alert
     title="Lista"
     detail="Estas en el lista de la aplicación"
@@ -13,10 +11,10 @@
 </div>
 
 <div class="row justify-content-md-center">
-  <div class="col-sm-12 col-md-2">
+  <div class="col-sm-12 col-md-2 mt-3">
 
     <div class="d-grid gap-2 mb-5">
-      <button *ngFor="let item of listCurrency; let i = index" class="btn btn-dark mx-3 " type="button" (click)="selectCurrency(item)" >
+      <button *ngFor="let item of listCurrency; let i = index" class="btn btn-secondary mx-3 " type="button" (click)="selectCurrency(item)" >
         <i [class]="listCurrencyIcon[i]"></i>
         {{item | titlecase}}</button>
     </div>
@@ -34,7 +32,7 @@
         <tbody>
           <tr *ngFor="let item of series; let i = index">
             <th scope="col">{{i+1}}</th>
-            <td>{{item.fecha | date}}</td>
+            <td>{{item.fecha | date:'dd/MM/yyyy'}}</td>
             <td>{{item.valor | currency}}</td>
           </tr>
 

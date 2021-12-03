@@ -5,14 +5,14 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up me-2" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
     </svg>
-    Subio de precio
+    Subio de precio el {{latestDate | date:'dd/MM/yyyy'}}
   </span>
   <ng-template #notIncreased>
     <span  class="badge bg-danger mb-2 mt-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down me-2" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
       </svg>
-      Bajo de precio
+      Bajo de precio el {{latestDate | date:'dd/MM/yyyy'}}
     </span>
   </ng-template>
   <p>
@@ -37,7 +37,7 @@
         <tbody>
           <tr *ngFor="let item of latestTeenSeries; let i = index">
             <th scope="col">{{i+1}}</th>
-            <td>{{item.name | date}}</td>
+            <td>{{item.name | date:'dd/MM/yyyy'}}</td>
             <td>{{item.value | currency}}</td>
           </tr>
 
