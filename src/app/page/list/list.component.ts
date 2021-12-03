@@ -17,6 +17,15 @@ export class ListComponent implements OnInit {
   constructor(private mindIndicadorService:MindIndicadorService) { }
 
   listCurrency:string[] = [ 'uf','ivp','dolar','dolar_intercambio','euro','ipc' ]
+  // TODO: Tomar en cuenta la posicion para los respectivos iconos
+  listCurrencyIcon:string[] = [
+    'bi bi-exclamation-diamond-fill',
+    'bi bi-exclamation-diamond-fill',
+    'bi bi-currency-dollar',
+    'b bi-currency-exchange',
+    'bi bi-currency-euro',
+    'bi bi-exclamation-diamond-fill'
+   ]
 
   ngOnInit(): void {
 

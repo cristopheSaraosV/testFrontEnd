@@ -11,6 +11,7 @@
           [routerLink]="item.route"
           [routerLinkActive]="item.activeRoute"
           [routerLinkActiveOptions]="{exact: true}">
+          <i [class]="item.iconClass"></i>
             {{item.label}}
         </a>
       </div>
