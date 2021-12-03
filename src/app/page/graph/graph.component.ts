@@ -1,3 +1,4 @@
+import { Series } from './../../interfaces/dataLineGraph.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GraphComponent implements OnInit {
 
-  constructor() { }
+  constructor(){}
 
   ngOnInit(): void {
   }
 
+
+  listCurrency:string[] = [ 'uf','ivp','dolar','dolar_intercambio','euro','ipc' ]
+
+
+
 }
+

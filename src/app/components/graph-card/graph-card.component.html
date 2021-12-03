@@ -1,1 +1,70 @@
-<p>graph-card works!</p>
+<div>
+  <h3 class="display-6 mb-2">{{ title }}</h3>
+  <h6 class="mb-2">{{ subtitle }}</h6>
+  <span *ngIf="priceIncreased;else notIncreased" class="badge bg-success mb-2 mt-1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up me-2" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+    </svg>
+    Subio de precio
+  </span>
+  <ng-template #notIncreased>
+    <span  class="badge bg-danger mb-2 mt-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down me-2" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+      </svg>
+      Bajo de precio
+    </span>
+  </ng-template>
+  <p>
+
+    <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" [attr.data-bs-target] ="'#'+codigo" aria-expanded="false" aria-controls="collapseExample">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bar-chart-line-fill me-2" viewBox="0 0 16 16">
+        <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2z"/>
+      </svg>
+      Ver ultimos 10
+    </button>
+  </p>
+  <div class="collapse mb-3" [id]="codigo">
+    <div class="card card-body">
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of latestTeenSeries; let i = index">
+            <th scope="col">{{i+1}}</th>
+            <td>{{item.name | date}}</td>
+            <td>{{item.value | currency}}</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <ngx-charts-line-chart
+    [results]="data"
+    [xAxis]="true"
+    [autoScale]="true"
+    [yAxis]="true"
+    [yAxisLabel]="'Valor en ' + currencyText"
+    [showYAxisLabel]="true"
+    [scheme]="colorScheme"
+    [showGridLines]="true"
+    [legend]="true"
+    [legendTitle]="title"
+    legendPosition="below"
+    [maxXAxisTickLength]="299"
+    [maxYAxisTickLength]="299"
+  ></ngx-charts-line-chart>
+</div>
+
+
+
+
+

@@ -13,8 +13,26 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItem = [
-      { label:'Inicio', route:'',activeRoute:'active' },
-      { label:'Graficas', route:'graph',activeRoute:'active' }
+      {
+        label:'Inicio',
+        route:'/',
+        activeRoute:'active',
+        class:'nav-link' ,
+        iconClass:'bi bi-house',
+      },
+      {
+        label:'Graficas',
+        route:'/graph',
+        activeRoute:'active',
+        class:'nav-link ',
+        iconClass:'bi bi-file-bar-graph' ,
+      },
+      { label:'Lista',
+        route:'/list',
+        activeRoute:'active',
+        class:'nav-link ',
+        iconClass:'bi bi-card-list',
+      }
     ]
   }
 
