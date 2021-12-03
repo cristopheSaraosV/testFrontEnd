@@ -1,7 +1,6 @@
 import { Serie } from './../../interfaces/miIndicadorCurrent.interface';
 import { Component, OnInit, Input } from '@angular/core';
 import { MindIndicadorService } from 'src/app/services/mind-indicador.service';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-list-currency',
@@ -20,12 +19,15 @@ export class ListCurrencyComponent implements OnInit {
 
   ngOnInit(): void {
     this.mindIndicador.showFinancialIndicators('uf').subscribe( res => {
-      console.log(res);
+
       const { nombre, serie } = res;
       this.name = nombre;
       this.series = serie.slice(serie.length-10, serie.length);
 
     })
   }
+
+
+
 
 }
