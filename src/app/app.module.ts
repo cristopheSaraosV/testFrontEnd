@@ -21,7 +21,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     GraphComponent,
     NavbarComponent,
     GraphCardComponent,
-    MsgAlertComponent
+    MsgAlertComponent,
   ],
   imports: [
     NgxChartsModule,

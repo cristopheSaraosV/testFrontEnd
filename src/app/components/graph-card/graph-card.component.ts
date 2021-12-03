@@ -1,7 +1,9 @@
+import { Serie } from './../../interfaces/miIndicadorCurrent.interface';
 import { DataLineGraph, Series } from './../../interfaces/dataLineGraph.interface';
 import { MindIndicadorService } from './../../services/mind-indicador.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-graph-card',
@@ -13,12 +15,15 @@ export class GraphCardComponent implements OnInit {
 
   constructor(private mindIndicadorService: MindIndicadorService){}
 
-  data:DataLineGraph[];
 
+
+  data:DataLineGraph[];
+  codigo:string="";
   title:string="";
   currencyText:string="";
   subtitle:string="";
   series:Series[] = []
+  LatestTenSeries:Serie[];
 
   @Input('currency')currency! : string;
 
@@ -26,17 +31,23 @@ export class GraphCardComponent implements OnInit {
     this.getData(this.currency);
   }
 
+
+
   colorScheme = {
     domain: ['#08DDC1']
   };
 
+
+
   getData(current:string){
     this.mindIndicadorService.showFinancialIndicators(current).subscribe( res => {
-      const { nombre, serie,unidad_medida } = res
+      const { nombre, serie,unidad_medida,codigo } = res
       this.subtitle = 'en '+unidad_medida + ' al '+ moment.utc(res.serie[res.serie.length-1].fecha).format('MM/DD/YYYY')
-      console.log(res);
-      this.title= nombre;
+      this.title = nombre;
+      this.codigo = codigo
       this.currencyText= unidad_medida;
+      this.LatestTenSeries = serie.splice(serie.length-10,serie.length);
+
       this.series = serie.map( res => {
         return {
           name:  moment.utc(res.fecha).format('MM/DD/YYYY'),
@@ -48,7 +59,10 @@ export class GraphCardComponent implements OnInit {
         {name:nombre, series: this.series}
       ]
     })
+
   }
+
+
 
 
 

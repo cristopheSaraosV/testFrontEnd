@@ -16,5 +16,7 @@ export class GraphComponent implements OnInit {
 
   listCurrency:string[] = [ 'uf','ivp','dolar','dolar_intercambio','euro','ipc' ]
 
+
+
   }
 
