@@ -18,7 +18,7 @@
     <div class="d-grid gap-2 mb-5">
       <button *ngFor="let item of listCurrency; let i = index" class="btn btn-dark mx-3 " type="button" (click)="selectCurrency(item)" >
         <i [class]="listCurrencyIcon[i]"></i>
-        {{item=='dolar_intercambio'?'In':item | titlecase}}</button>
+        {{item | titlecase}}</button>
     </div>
   </div>
   <div class="col-sm-12 col-md-8 p-3" *ngIf="series.length !== 0; else notFound">
