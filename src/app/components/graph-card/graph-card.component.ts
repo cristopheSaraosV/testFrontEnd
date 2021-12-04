@@ -37,7 +37,7 @@ export class GraphCardComponent implements OnInit {
 
 
   colorScheme = {
-    domain: ['#08DDC1']
+    domain: ['#F9A827']
   };
 
 

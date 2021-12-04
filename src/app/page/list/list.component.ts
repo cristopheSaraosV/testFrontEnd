@@ -9,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styles: [
+  styles: [ `
+     .text-orange{
+      color: rgb(243, 136, 14);
+  }
+
+  `
   ]
 })
 export class ListComponent implements OnInit {
