@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="row justify-content-md-center mt-0 mt-md-2">
+<div class="row justify-content-md-center mt-0 mt-md-2 animate__animated animate__backInDown">
 
   <div class="col-sm-12 col-md-10">
     <h1 class="mt-2 text-orange mx-3 mx-md-0"><strong>Lista</strong></h1>
@@ -15,14 +15,14 @@
 <div class="row justify-content-md-center">
   <div class="col-sm-12 col-md-2 mt-3">
 
-    <div class="d-grid gap-2 mb-5">
+    <div class="d-grid gap-2 mb-5 animate__animated animate__backInLeft">
       <button *ngFor="let item of listCurrency; let i = index" class="btn btn-dark mx-3 " type="button" (click)="selectCurrency(item)" >
         <i [class]="listCurrencyIcon[i]"></i>
         {{item | titlecase}}</button>
     </div>
   </div>
   <div class="col-sm-12 col-md-8 p-3" *ngIf="series.length !== 0; else notFound">
-    <div class="table-responsive">
+    <div class="table-responsive animate__animated animate__backInRight">
       <table class="table table-hover">
         <thead class="table-dark">
           <tr>
@@ -45,7 +45,7 @@
 
   </div>
   <ng-template #notFound>
-    <div class="col-sm-12 col-md-8 p-3">
+    <div class="col-sm-12 col-md-8 p-3 animate__animated animate__zoomIn">
       <div class="alert alert-orange" role="alert">
           Debes seleccionar un indicadores económicos
       </div>

@@ -1,5 +1,7 @@
 # Aplicación de grafica
 
+## V1
+
 ### Framework y librerias utilizadas
 1. Bootstrap.
 2. Moment.

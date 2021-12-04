@@ -63,28 +63,13 @@ export class ListComponent implements OnInit {
     this.status = this.toggle ? 'Enable' : 'Disable';
     this.mindIndicadorService.showFinancialIndicators(item).subscribe( res => {
       const { nombre, serie } = res;
-      this.showToast(
-        'Informacion obtenida',
-        '',
-        'success',
-        500
-      )
+
       this.name = nombre;
       this.series = [...serie.slice(serie.length-10, serie.length)];
     })
   }
 
-  showToast(
-		title: string,
-		detai: string,
-		icon: SweetAlertIcon,
-		timeOut: number = 2000
-	) {
-		Swal.fire(title, detai, icon);
-		setInterval(() => {
-			Swal.close();
-		}, timeOut);
-	}
+
 
 
 }

@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-  <div class="row justify-content-md-center mt-0 mt-md-2">
+  <div class="row justify-content-md-center mt-0 mt-md-2 ">
 
     <div class="col-sm-12 col-md-10">
       <h1 class="mt-2 text-orange mx-3 mx-md-0"><strong>Graficas</strong></h1>
@@ -13,7 +13,7 @@
 
     <div
       *ngFor="let currency of listCurrency"
-      class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 mb-3 ms-2"
+      class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 mb-3 ms-2 animate__animated animate__fadeInRight  "
     >
       <app-graph-card [currency]="currency"></app-graph-card>
     </div>
