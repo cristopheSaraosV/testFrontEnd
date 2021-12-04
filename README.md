@@ -25,3 +25,18 @@
 - Todas las depencias fueron incoporadas con npm.
 - Se penso en el momento implementar lazy loading pero ya que solo se solicitaba un requerimiento la inplementacion no era necesaria.
 
+
+## V2
+
+
+### Notas
+
+- Se saco Sweetalert2 a la hora de obtener datos, a la vista no era muy agradable.
+
+- Se cambio todo los elementos con una gama de colores más homogenia.
+
+- Se agrego animate.css para implementar animaciones en los elementos.
+
+- Se utilizo undraw para las ilustraciones del inicio.
+
+- Se creo un logo para el navBar en canva.
