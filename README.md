@@ -1,27 +1,42 @@
-# Prueba
+# Aplicación de grafica
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
+## V1
 
-## Development server
+### Framework y librerias utilizadas
+1. Bootstrap.
+2. Moment.
+3. Sweetalert2
+4. Bootstrap-icons
+5. Ngx-charts
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+###  Funciones
 
-## Code scaffolding
+1. Mostrar graficas de   UF , IVP , DOLAR,   DOLAR INTERCAMBIO , EURO , IPC.
+2. Mostrar los ultimos 10 valores para cada uno
+3. Agregar badge dependiendo de si subio o bajo el valor.
+4. Se agrego responsive
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Notas
 
-## Build
+- Se implemento  @input para la interaccion entre componentes.
+- Se utilizo quicktype para la obtencion de las interfaces.
+- Se utlizo pipe para mejorar el entendimiento visual de los datos correspondiente.
+- Se opto por mostrar los 10 ultimos resultados a partie de un collapse por conflixto **forced-reflow-while-executing-javascript-took**
+- Todas las depencias fueron incoporadas con npm.
+- Se penso en el momento implementar lazy loading pero ya que solo se solicitaba un requerimiento la inplementacion no era necesaria.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## V2
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Notas
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Se saco Sweetalert2 a la hora de obtener datos, a la vista no era muy agradable.
 
-## Further help
+- Se cambio todo los elementos con una gama de colores más homogenia.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Se agrego animate.css para implementar animaciones en los elementos.
+
+- Se utilizo undraw para las ilustraciones del inicio.
+
+- Se creo un logo para el navBar en canva.
