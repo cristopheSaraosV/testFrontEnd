@@ -12,7 +12,19 @@ import { Component, OnInit } from '@angular/core';
   styles: [ `
      .text-orange{
       color: rgb(243, 136, 14);
-  }
+
+
+    }
+    .alert-orange{
+      color:#fff;
+      background:#F3880D
+    }
+
+    .table-hover tr:hover{
+  background-color: orange !important ;
+  cursor: pointer;
+
+}
 
   `
   ]
@@ -41,8 +53,14 @@ export class ListComponent implements OnInit {
 
   dataLineGraph:DataLineGraph;
 
+  toggle = true;
+  status = 'Enable';
+
+
 
   selectCurrency(item:string){
+    this.toggle = !this.toggle;
+    this.status = this.toggle ? 'Enable' : 'Disable';
     this.mindIndicadorService.showFinancialIndicators(item).subscribe( res => {
       const { nombre, serie } = res;
       this.showToast(

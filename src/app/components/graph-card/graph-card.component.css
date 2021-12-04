@@ -5,3 +5,10 @@
 .bg-danger{
   background-color: #db505e !important ;
 }
+
+
+.table-hover tr:hover{
+  background-color: orange !important ;
+  cursor: pointer;
+
+}
