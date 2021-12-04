@@ -1,19 +1,24 @@
 <app-navbar></app-navbar>
-  <div class="row justify-content-md-center mt-0 mt-md-2">
+  <div class="row justify-content-md-center mt-0 mt-md-2 ">
 
-    <div class="col-sm-12 col-md-7 mt-0 mt-md-3">
-      <app-msg-alert
-        title="Graficas"
-        detail="Estas en el grafica de la aplicación"
-        type="primary"
-      ></app-msg-alert>
+    <div class="col-sm-12 col-md-10">
+      <h1 class="mt-2 text-orange mx-3 mx-md-0"><strong>Graficas</strong></h1>
+      <P class="mt-2 mx-3 mx-md-0">
+        <strong>
+         Las graficas mostradas son las siguientes <span class="text-orange"> UF, IVP, DOLAR, DOLAR INTERCAMBIO, EURO, IPC.</span>
+        </strong>
+      </P>
+
     </div>
 
     <div
       *ngFor="let currency of listCurrency"
-      class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 mb-3 ms-2"
+      class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 mb-3 ms-2 animate__animated animate__fadeInRight  "
     >
       <app-graph-card [currency]="currency"></app-graph-card>
     </div>
   </div>
+
+
+
 

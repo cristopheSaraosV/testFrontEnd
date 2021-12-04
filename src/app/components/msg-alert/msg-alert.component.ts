@@ -10,7 +10,7 @@ export class MsgAlertComponent implements OnInit {
   constructor() { }
   @Input('title') title :string = '';
   @Input('detail') detail :string = '';
-  @Input('type') type :string = '';
+  @Input('img') img :string = '';
 
   ngOnInit(): void {
   }
